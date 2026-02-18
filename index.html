@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="icons/favicon.svg" type="image/x-icon">
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#1976d2">
+</head>
+<body>
+
+    <header>
+        <h2>How many Liters of water you drink Today?</h2>
+    </header>
+    <main>
+        <div class="container">
+            <div class="jar" id="jar"><label id="count">0.0 Lit</label></div>
+            <div class="buttons">
+            <button id="add50">+50 ml</button>
+            <button id="add100">+100 ml</button>
+            <button id="add200">+200 ml</button>
+            <button id="add500">+500 ml</button>
+            <button id="add1L">+1 L</button>
+            </div>
+        </div>
+  </main>
+
+<script src="script.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(() => console.log('Service Worker registered'))
+      .catch((error) => console.error('Service Worker registration failed:', error));
+  }
+</script>
+
+</body>
+</html>
